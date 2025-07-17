@@ -1,0 +1,200 @@
+/* Base Styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #2e2e2e;
+  color: #333;
+}
+
+.main-header {
+  text-align: center;
+  padding: 60px 20px 20px;
+  color: #fff;
+}
+
+.main-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.main-header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: #f3f3f3;
+  padding: 15px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab {
+  text-decoration: none;
+  color: #555;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #eaeaea;
+  font-weight: 500;
+}
+
+.tab.active {
+  background: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 100, 255, 0.377);
+}
+
+/* Card Sections */
+.card {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide/Show Section Logic */
+.section-page {
+  display: none;
+}
+
+.section-page.active {
+  display: block;
+}
+
+/* About Me Layout */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-content .text {
+  flex: 1;
+}
+
+.about-content .image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Experience Section */
+.experience-entry {
+  margin-bottom: 30px;
+}
+
+.experience-entry h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.experience-entry h3 span {
+  font-weight: normal;
+  color: #666;
+  font-size: 1rem;
+}
+
+.experience-entry .location {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.experience-entry ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #444;
+}
+
+.experience-entry ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.section-page {
+  display: none;
+}
+
+.section-page.active {
+  display: block;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.company-logo {
+  width: auto;
+  height: 60px; /* Adjust based on your text size */
+  object-fit: contain;
+}
+
+.experience-entry .location {
+  margin: 5px 0 10px 0;
+  font-size: 0.95rem;
+  color: #888;
+}
+
+/* Certificate section nav */
+.certificate-nav {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.certificate-nav li a {
+  text-decoration: none;
+  background: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.certificate-nav li a:hover {
+  background: #e0e0e0;
+}
+
+/* Entry layout */
+.certificate-entry {
+  margin-bottom: 50px;
+}
+
+.certificate-entry h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Image and text layout */
+.certificate-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.certificate-image {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-description {
+  flex: 1;
+  min-width: 250px;
+}
