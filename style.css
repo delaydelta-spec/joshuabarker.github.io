@@ -22,16 +22,17 @@ body {
   color: #ccc;
 }
 
-/* Tabs */
+/* Tabs container */
 .tabs {
   display: flex;
   justify-content: center;
-  background: #f3f3f3;
+  background: #ffffff;
   padding: 15px 0;
   flex-wrap: wrap;
   gap: 10px;
 }
 
+/* Base tab style */
 .tab {
   text-decoration: none;
   color: #555;
@@ -39,15 +40,33 @@ body {
   border-radius: 8px;
   background: #eaeaea;
   font-weight: 500;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   opacity: 0.6;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
+/* Hover only affects inactive tabs */
+.tab:not(.active):hover {
+  background-color: #dcdcdc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Active tab */
 .tab.active {
   background: #fff;
-  box-shadow: 2px 2px 3px rgba(0, 100, 255, 0.377),
-              -2px -2px 3px rgba(13, 13, 14, 0.377);
+  box-shadow: 3px 3px 3px rgba(0, 100, 255, 0.377), inset 4px 4px 5px -3px rgba(0, 0, 0, 0.15);
   opacity: 1;
+  cursor: default;
+  pointer-events: none; /* Optional: disables clicks */
+}
+
+/* Prevent hover changes on active tab */
+.tab.active:hover {
+  background: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 100, 255, 0.377), inset 4px 4px 2px -3px rgba(0, 0, 0, 0.15);
+  transform: none;
 }
 
 /* Card Sections */
@@ -212,4 +231,56 @@ body {
   font-family: monospace;
   opacity: 0.7;
   z-index: 999;
+}
+
+.project-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.project-tab {
+  background: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover only affects inactive tabs */
+.project-tab:not(.active):hover {
+  background: #d0d0d0;
+  transform: translateY(-1px);
+}
+
+/* Active tab stays blue and doesn't move on hover */
+.project-tab.active {
+  background: rgba(92, 190, 255, 0.527);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: default;
+  color: #000;
+}
+
+/* Optional: override hover for active to ensure it stays blue */
+.project-tab.active:hover {
+  background: rgba(92, 190, 255, 0.527);
+  transform: none;
+}
+
+.project-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.project-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
