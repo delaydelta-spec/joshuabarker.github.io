@@ -55,6 +55,7 @@ body {
 
 /* Active tab */
 .tab.active {
+  color: #000000;
   background: rgba(92, 190, 255, 0.527);
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
   opacity: 1;
