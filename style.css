@@ -38,7 +38,7 @@ body {
   color: #555;
   padding: 10px 20px;
   border-radius: 8px;
-  background: #eaeaea;
+  background: #d4d4d4;
   font-weight: 500;
   opacity: 0.6;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
@@ -55,11 +55,11 @@ body {
 
 /* Active tab */
 .tab.active {
-  background: #fff;
-  box-shadow: 3px 3px 3px rgba(0, 100, 255, 0.377), inset 4px 4px 5px -3px rgba(0, 0, 0, 0.15);
+  background: rgba(92, 190, 255, 0.527);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
   opacity: 1;
   cursor: default;
-  pointer-events: none; /* Optional: disables clicks */
+  pointer-events: none;
 }
 
 /* Prevent hover changes on active tab */
