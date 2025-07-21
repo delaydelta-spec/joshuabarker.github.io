@@ -18,7 +18,10 @@
   </head>
 
   <body>
-    <div class="version-label">v0.7.0</div>
+    <div class="top-meta">
+      <span class="version-label">v0.8.0</span>
+      <span class="last-updated" id="lastUpdated">Last updated: ...</span>
+    </div>
     <header class="main-header">
       <h1>JOSHUA STEPHEN BARKER</h1>
       <p>Accounting and Financial Management Graduate</p>
@@ -176,25 +179,62 @@
 
       <!-- Internal Project Tabs -->
       <ul class="certificate-nav">
-        <li><a href="#" class="project-tab active" data-project="project1">Financial Dashboard</a></li>
-        <li><a href="#" class="project-tab" data-project="project2">Cost Model Tool</a></li>
-        <li><a href="#" class="project-tab" data-project="project3">Sustainability Report</a></li>
+        <li><a href="#" class="project-tab active" data-project="project1">Power BI Financial Dashboard</a></li>
+        <li><a href="#" class="project-tab" data-project="project2">Python Portfolio Optimisation</a></li>
+        <li><a href="#" class="project-tab" data-project="project3">Personal Website</a></li>
       </ul>
 
       <!-- Project Contents -->
       <div class="project-content active" id="project1">
-        <h3>Project 1 Title</h3>
-        <p>Short summary.</p>
+        <h3>Power BI Financial Dashboard</h3>
+        <p>A dynamic Power BI dashboard built to visualise and analyse key financial metrics, including revenue trends, cost breakdowns, and profitability over time. The dashboard integrates data from multiple sources, features slicers and drilldowns, and presents KPIs for actionable business insights.</p>
+        <ul>
+          <li>Connected Excel and CSV data sources using Power Query and DAX.</li>
+          <li>Built visuals for cash flow, cost centres, budget vs. actual, and rolling forecasts.</li>
+          <li>Created interactive filters, trend indicators, and conditional formatting.</li>
+          <li>Used data modelling techniques to relate multiple tables effectively.</li>
+        </ul>
+        <p><em>Image attached soon.</em></p>
       </div>
 
       <div class="project-content" id="project2">
-        <h3>Project 2 Title</h3>
-        <p>Short summary.</p>
+        <h2>FTSE 100 Portfolio Optimisation with Python</h2>
+        <p>This project explored five FTSE 100 companies, applying technical and quantitative analysis to construct a high-performing investment portfolio using Python.</p>
+
+        <ul>
+          <li>Used real-time data via <code>yfinance</code> to retrieve stock prices and calculate returns and volatility</li>
+          <li>Applied technical indicators such as SMA crossovers and Bollinger Bands to inform asset selection</li>
+          <li>Modelled risk and return using the Sharpe Ratio and created efficient frontiers to identify optimal weightings</li>
+          <li>Backtested the strategy and benchmarked it against an equal-weight portfolio, demonstrating outperformance</li>
+          <li>Presented findings in a clear structure using matplotlib for visualisation and pandas for analysis</li>
+        </ul>
+
+        <div class="code-download" style="text-align: center; margin-bottom: 30px;">
+          <a href="/downloads/Portfolio Optimisation.py" download class="download-button">📄 Download Python Analysis Code</a>
+        </div>
+
+        <div class="project-images-row">
+          <img src="assets/projects/ulvrsmac.png" alt="Bollinger Bands" />
+          <img src="assets/projects/shelbb.png" alt="SMA Crossover Strategy" />
+          <img src="assets/projects/shelpr.png" alt="Cumulative Returns Comparison" />
+        </div>
+        
+        <p><em>Note: This project was completed as part of a university coursework submission and the report is not available for public distribution.</em></p>
       </div>
 
       <div class="project-content" id="project3">
-        <h3>Project 3 Title</h3>
-        <p>Short summary.</p>
+        <h3>Personal Portfolio Website</h3>
+        <p>This website was designed and developed from scratch using HTML, CSS, and JavaScript to showcase my professional background, education, projects, and certificates. It serves both as a learning exercise and a digital CV.</p>
+        
+        <ul>
+          <li>Built a fully responsive layout using HTML5 and Flexbox/CSS Grid for smooth structure and alignment across devices.</li>
+          <li>Implemented dynamic content switching via JavaScript to create tabbed navigation between site sections.</li>
+          <li>Added smooth transitions and interactive hover effects for a polished, user-friendly feel.</li>
+          <li>Utilised GitHub Pages for version-controlled deployment, with automatic "Last updated" timestamp via GitHub API.</li>
+          <li>Created a light and modern design aesthetic with rounded corners, soft shadows, and semantic structure.</li>
+        </ul>
+
+        <p><em>This project helped reinforce my understanding of web design fundamentals, clean code organisation, and maintaining a professional online presence.</em></p>
       </div>
     </section>
 
@@ -246,6 +286,23 @@
             document.getElementById(target).classList.add('active');
           });
         });
+
+        // --- GITHUB LAST UPDATED LOGIC ---
+        fetch("https://api.github.com/repos/delaydelta-spec/joshuabarker.github.io/commits?per_page=1")
+          .then(res => res.json())
+          .then(data => {
+            const commitDate = data[0]?.commit?.committer?.date;
+            if (commitDate) {
+              const formattedDate = new Date(commitDate).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+              });
+              const label = document.getElementById('lastUpdated');
+              if (label) label.textContent = `Last updated: ${formattedDate}`;
+            }
+          })
+          .catch(err => console.error("Failed to fetch commit date:", err));
       });
     </script>
   </body>
