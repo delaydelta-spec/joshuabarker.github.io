@@ -336,6 +336,30 @@ body {
   transform: translateY(-1px);
 }
 
+.experience-with-image {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.experience-with-image .graduation-image {
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .experience-with-image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-with-image .graduation-image {
+    margin-top: 15px;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
